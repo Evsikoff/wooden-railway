@@ -60148,8 +60148,6 @@ var Snapshot = function() {
         this.elContainer = null,
         this.elSettingsBtn = null,
         this.elSnapshotBtn = null,
-        this.elAboutBtn = null,
-        this.elShareBtn = null,
         this.elButtons = [],
         this.spriteAnimations = []
     }
@@ -60160,10 +60158,8 @@ var Snapshot = function() {
             this.elContainer = document.getElementById("component--header"),
             this.elSnapshotBtn = document.getElementById("header-snapshot"),
             this.elSettingsBtn = document.getElementById("header-settings-btn"),
-            this.elAboutBtn = document.getElementById("header-about-btn"),
-            this.elShareBtn = document.getElementById("header-share-btn"),
-            this.elButtons.push(this.elSettingsBtn, this.elSnapshotBtn, this.elShareBtn, this.elAboutBtn);
-            var t = ["header/settings/settingsAnimation", "header/snapshot/snapshotAnimation", "header/share/shareAnimation", "header/about/aboutAnimation"];
+            this.elButtons.push(this.elSettingsBtn, this.elSnapshotBtn);
+            var t = ["header/settings/settingsAnimation", "header/snapshot/snapshotAnimation"];
             this.elButtons.forEach((function(t, i) {
                 e.spriteAnimations[i] = new spriteHandler({
                     btn: t
@@ -60180,8 +60176,6 @@ var Snapshot = function() {
         value: function() {
             this.elSettingsBtn.addEventListener("pointerdown", this.onSettingsBtnClick),
             this.elSnapshotBtn.addEventListener("pointerdown", this.onSnapshotBtnClick),
-            this.elAboutBtn.addEventListener("pointerdown", this.onAboutBtnClick),
-            this.elShareBtn.addEventListener("pointerdown", this.onShareBtnClick),
             this.spriteAnimations.forEach((function(e) {
                 return e.init({
                     hover: !0,
@@ -60222,16 +60216,6 @@ var Snapshot = function() {
         key: "onSettingsBtnClick",
         value: function() {
             settingsUI.show()
-        }
-    }, {
-        key: "onAboutBtnClick",
-        value: function() {
-            about.show()
-        }
-    }, {
-        key: "onShareBtnClick",
-        value: function() {
-            share.show()
         }
     }, {
         key: "resize",
