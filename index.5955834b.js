@@ -37449,7 +37449,7 @@ var quickLoader = quickLoader$a.exports
     _defineProperty2(this, "SVG_PATH", "webassets/svgs/"),
     _defineProperty2(this, "DRACO_PATH", "webassets/js/draco/"),
     _defineProperty2(this, "DATA_PATH", "webassets/data/"),
-    _defineProperty2(this, "QUALITY_PATH", browser.isMobile ? "lowres/" : "hires/"),
+    _defineProperty2(this, "QUALITY_PATH", browser.isMobile ? "lowres" : "hires"),
     _defineProperty2(this, "RENDER_TARGET_FLOAT_TYPE", null),
     _defineProperty2(this, "DATA_FLOAT_TYPE", null),
     _defineProperty2(this, "USE_FLOAT_PACKING", !1),
@@ -40366,7 +40366,7 @@ for (var AUDIO_DATA = {
         }
     }]),
     e
-}(), cameraMode = new CameraMode, trackModelPath = "".concat(settings.MODEL_PATH, "tracks/"), trackTexturePath = "".concat(settings.TEXTURE_PATH, "tracks/"), trackImgPath = "".concat(settings.IMAGE_PATH, "tracks/"), trackColorsImgPath = "".concat(settings.IMAGE_PATH, "tracks/colors/"), qualityPath$3 = "".concat(settings.QUALITY_PATH), trackData = {
+}(), cameraMode = new CameraMode, trackModelPath = "".concat(settings.MODEL_PATH, "tracks/"), trackTexturePath = "".concat(settings.TEXTURE_PATH, "tracks/"), trackImgPath = "".concat(settings.IMAGE_PATH, "tracks/"), trackColorsImgPath = "".concat(settings.IMAGE_PATH, "tracks/colors/"), qualityPath$3 = "".concat(settings.QUALITY_PATH, "/"), trackData = {
     defaultTrackOffset: [0, 0, -.2],
     colorPalettes: [{
         type: "colorPalettes",
@@ -41552,12 +41552,12 @@ var vert$1 = "#define GLSLIFY 1\nvarying vec2 v_uv;varying vec3 v_worldNormal;va
     return _createClass2(i, null, [{
         key: "preload",
         value: function() {
-            i.sharedUniforms.u_envTextureDay.value = properties.loader.add(settings.TEXTURE_PATH + "environment/" + settings.QUALITY_PATH + "envDay.jpg", {
+            i.sharedUniforms.u_envTextureDay.value = properties.loader.add(settings.TEXTURE_PATH + "environment/" + settings.QUALITY_PATH + "/envDay.jpg", {
                 weight: 9,
                 type: "texture",
                 wrap: RepeatWrapping
             }).content,
-            i.sharedUniforms.u_envTextureNight.value = properties.loader.add(settings.TEXTURE_PATH + "environment/" + settings.QUALITY_PATH + "envNight.jpg", {
+            i.sharedUniforms.u_envTextureNight.value = properties.loader.add(settings.TEXTURE_PATH + "environment/" + settings.QUALITY_PATH + "/envNight.jpg", {
                 weight: 9,
                 type: "texture",
                 wrap: RepeatWrapping
@@ -42049,7 +42049,7 @@ var Animals = function() {
                     return e._onBalloonModelLoaded(t)
                 }
             }),
-            this.diffuseTextureBalloon = properties.loader.add(settings.TEXTURE_PATH + "balloon/" + settings.QUALITY_PATH + "balloon_diffuse_1." + properties.jpgwebp, {
+            this.diffuseTextureBalloon = properties.loader.add(settings.TEXTURE_PATH + "balloon/" + settings.QUALITY_PATH + "/balloon_diffuse_1." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 50 : 98 : properties.jpgwebp ? 21 : 39,
                 type: "texture",
                 flipY: !1
@@ -42486,12 +42486,12 @@ var TinyInstancedMesh = function(e) {
                     e.model = t.scene || t.scenes[0]
                 }
             }),
-            this.diffuseTexture = properties.loader.add(settings.TEXTURE_PATH + "flower/" + settings.QUALITY_PATH + "flower_diffuse." + properties.jpgwebp, {
+            this.diffuseTexture = properties.loader.add(settings.TEXTURE_PATH + "flower/" + settings.QUALITY_PATH + "/flower_diffuse." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 20 : 36 : properties.jpgwebp ? 9 : 14,
                 type: "texture",
                 flipY: !1
             }).content,
-            this.shadowTexture = properties.loader.add(settings.TEXTURE_PATH + "flower/" + settings.QUALITY_PATH + "flower_shadow." + properties.jpgwebp, {
+            this.shadowTexture = properties.loader.add(settings.TEXTURE_PATH + "flower/" + settings.QUALITY_PATH + "/flower_shadow." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 1 : 6 : properties.jpgwebp ? 1 : 3,
                 type: "texture"
             }).content
@@ -42823,12 +42823,12 @@ var TinyInstancedMesh = function(e) {
                     e.model = t.scene || t.scenes[0]
                 }
             }),
-            this.diffuseTexture = properties.loader.add(settings.TEXTURE_PATH + "grass/" + settings.QUALITY_PATH + "grass_diffuse." + properties.jpgwebp, {
+            this.diffuseTexture = properties.loader.add(settings.TEXTURE_PATH + "grass/" + settings.QUALITY_PATH + "/grass_diffuse." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 11 : 22 : properties.jpgwebp ? 4 : 8,
                 type: "texture",
                 flipY: !1
             }).content,
-            this.shadowTexture = properties.loader.add(settings.TEXTURE_PATH + "grass/" + settings.QUALITY_PATH + "grass_shadow." + properties.jpgwebp, {
+            this.shadowTexture = properties.loader.add(settings.TEXTURE_PATH + "grass/" + settings.QUALITY_PATH + "/grass_shadow." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 1 : 7 : properties.jpgwebp ? 1 : 3,
                 type: "texture"
             }).content
@@ -42938,7 +42938,7 @@ var TinyInstancedMesh = function(e) {
 }()
   , grass = new Grass
   , texturePath = "".concat(settings.TEXTURE_PATH, "grassStraws/")
-  , qualityPath$1 = "".concat(settings.QUALITY_PATH)
+  , qualityPath$1 = "".concat(settings.QUALITY_PATH, "/")
   , grassStrawsData = [{
     name: "strawA",
     diffuseTexture: "".concat(texturePath).concat(qualityPath$1, "grass_01.png"),
@@ -43284,11 +43284,11 @@ var TinyInstancedMesh = function(e) {
                     e.data = t.flyPathPlane || []
                 }
             }),
-            this.diffuseTexturePlane = properties.loader.add(settings.TEXTURE_PATH + "plane/" + settings.QUALITY_PATH + "plane_diffuse." + properties.jpgwebp, {
+            this.diffuseTexturePlane = properties.loader.add(settings.TEXTURE_PATH + "plane/" + settings.QUALITY_PATH + "/plane_diffuse." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 17 : 30 : properties.jpgwebp ? 9 : 14,
                 type: "texture"
             }).content,
-            this.diffuseTextureUfo = properties.loader.add(settings.TEXTURE_PATH + "ufo/" + settings.QUALITY_PATH + "ufo_diffuse." + properties.jpgwebp, {
+            this.diffuseTextureUfo = properties.loader.add(settings.TEXTURE_PATH + "ufo/" + settings.QUALITY_PATH + "/ufo_diffuse." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 10 : 15 : properties.jpgwebp ? 5 : 6,
                 type: "texture",
                 flipY: !1
@@ -43520,23 +43520,23 @@ var TinyInstancedMesh = function(e) {
                     return t._onModelLoaded(e, "rock_b")
                 }
             }),
-            this.diffuseTextureRockA = properties.loader.add("".concat(settings.TEXTURE_PATH, "rocks/rock_a/").concat(settings.QUALITY_PATH, "rock_a_diffuse.") + properties.jpgwebp, {
+            this.diffuseTextureRockA = properties.loader.add("".concat(settings.TEXTURE_PATH, "rocks/rock_a/").concat(settings.QUALITY_PATH, "/rock_a_diffuse.") + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 5 : 8 : properties.jpgwebp ? 2 : 8,
                 type: "texture",
                 flipY: !1
             }).content,
-            this.diffuseTextureRockB = properties.loader.add("".concat(settings.TEXTURE_PATH, "rocks/rock_b/").concat(settings.QUALITY_PATH, "rock_b_diffuse.") + properties.jpgwebp, (e = {
+            this.diffuseTextureRockB = properties.loader.add("".concat(settings.TEXTURE_PATH, "rocks/rock_b/").concat(settings.QUALITY_PATH, "/rock_b_diffuse.") + properties.jpgwebp, (e = {
                 weight: properties.isHiresSetting ? 9 : 4
             },
             _defineProperty2(e, "weight", properties.isHiresSetting ? properties.jpgwebp ? 4 : 7 : properties.jpgwebp ? 2 : 3),
             _defineProperty2(e, "type", "texture"),
             _defineProperty2(e, "flipY", !1),
             e)).content,
-            this.shadowTextureRockA = properties.loader.add("".concat(settings.TEXTURE_PATH, "rocks/rock_a/").concat(settings.QUALITY_PATH, "rock_a_shadow.") + properties.jpgwebp, {
+            this.shadowTextureRockA = properties.loader.add("".concat(settings.TEXTURE_PATH, "rocks/rock_a/").concat(settings.QUALITY_PATH, "/rock_a_shadow.") + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 1 : 5 : properties.jpgwebp ? 1 : 2,
                 type: "texture"
             }).content,
-            this.shadowTextureRockB = properties.loader.add("".concat(settings.TEXTURE_PATH, "rocks/rock_b/").concat(settings.QUALITY_PATH, "rock_b_shadow.") + properties.jpgwebp, {
+            this.shadowTextureRockB = properties.loader.add("".concat(settings.TEXTURE_PATH, "rocks/rock_b/").concat(settings.QUALITY_PATH, "/rock_b_shadow.") + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 1 : 6 : properties.jpgwebp ? 1 : 3,
                 type: "texture"
             }).content
@@ -44067,22 +44067,22 @@ var TinyInstancedMesh = function(e) {
                     return e._onModelLoaded(t)
                 }
             }),
-            this.diffuseTextureGround = properties.loader.add(settings.TEXTURE_PATH + "terrain/" + settings.QUALITY_PATH + "terrainGround_diffuse." + properties.jpgwebp, {
+            this.diffuseTextureGround = properties.loader.add(settings.TEXTURE_PATH + "terrain/" + settings.QUALITY_PATH + "/terrainGround_diffuse." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 41 : 157 : properties.jpgwebp ? 28 : 57,
                 type: "texture",
                 flipY: !1
             }).content,
-            this.diffuseTextureScene = properties.loader.add(settings.TEXTURE_PATH + "terrain/" + settings.QUALITY_PATH + "terrainScene_diffuse." + properties.jpgwebp, {
+            this.diffuseTextureScene = properties.loader.add(settings.TEXTURE_PATH + "terrain/" + settings.QUALITY_PATH + "/terrainScene_diffuse." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 598 : 831 : properties.jpgwebp ? 258 : 320,
                 type: "texture",
                 flipY: !1
             }).content,
-            this.alphaTextureGround = properties.loader.add(settings.TEXTURE_PATH + "terrain/" + settings.QUALITY_PATH + "terrainGround_alpha." + properties.jpgwebp, {
+            this.alphaTextureGround = properties.loader.add(settings.TEXTURE_PATH + "terrain/" + settings.QUALITY_PATH + "/terrainGround_alpha." + properties.jpgwebp, {
                 weight: properties.isHiresSetting ? properties.jpgwebp ? 7 : 23 : properties.jpgwebp ? 1 : 3,
                 type: "texture",
                 flipY: !1
             }).content,
-            this.patternTexture = properties.loader.add(settings.TEXTURE_PATH + "terrain/" + settings.QUALITY_PATH + "pattern.png", {
+            this.patternTexture = properties.loader.add(settings.TEXTURE_PATH + "terrain/" + settings.QUALITY_PATH + "/pattern.png", {
                 weight: properties.isHiresSetting ? 45 : 23,
                 type: "texture",
                 flipY: !1,
@@ -44184,7 +44184,7 @@ var TinyInstancedMesh = function(e) {
         key: "preInit",
         value: function() {
             var e = this
-              , t = "".concat(settings.TEXTURE_PATH, "tree/").concat(settings.QUALITY_PATH);
+              , t = "".concat(settings.TEXTURE_PATH, "tree/").concat(settings.QUALITY_PATH, "/");
             properties.loader.add(settings.DATA_PATH + "landscapeData.json", {
                 weight: 6,
                 type: "json",
@@ -44475,7 +44475,7 @@ var TinyInstancedMesh = function(e) {
   , landscape = new Landscape
   , trainModelPath = "".concat(settings.MODEL_PATH, "train/")
   , trainTexturePath = "".concat(settings.TEXTURE_PATH, "train/")
-  , qualityPath = "".concat(settings.QUALITY_PATH)
+  , qualityPath = "".concat(settings.QUALITY_PATH, "/")
   , trainData = [{
     isCab: !0,
     model: {
