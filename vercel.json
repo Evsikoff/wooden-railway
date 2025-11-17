@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/assets/meta/(site.webmanifest|manifest.json)",
+      "source": "/webassets/meta/(site.webmanifest|manifest.json)",
       "headers": [
         {
           "key": "Content-Type",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "source": "/assets/meta/browserconfig.xml",
+      "source": "/webassets/meta/browserconfig.xml",
       "headers": [
         {
           "key": "Content-Type",

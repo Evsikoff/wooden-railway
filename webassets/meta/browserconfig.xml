@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="./assets/meta/apple-touch-icon.png"/>
+            <square150x150logo src="./webassets/meta/apple-touch-icon.png"/>
             <TileColor>#0e73cc</TileColor>
         </tile>
     </msapplication>
